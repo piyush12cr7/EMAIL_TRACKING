@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email UI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    form {
+      width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid yellowgreen;
+      border-radius: 5px;
+      background-color: grey;
+    }
+    label, input, textarea {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+    textarea {
+      height: 100px;
+    }
+    button {
+      background-color: antiquewhite;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+    }
+    
+  </style>
+</head>
+<body>
+    <center><h1>SEND EMAIL</h1></center>
+  <form method="post">
+    {% csrf_token %}
+    <label for="recipient">Recipient:</label>
+    <input type="email" id="recipient" name="recipient" required>
+    <br/>
+    <br/>
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" required>
+    <br/>
+    <br/>
+    <label for="content">Content:</label>
+    <textarea id="content" name="content" required></textarea>
+    <br/>
+    <br/>
+    <center><button type="submit">Send Email</button></center>
+  </form>
+</body>
+</html>

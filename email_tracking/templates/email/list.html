@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid black;
+    }
+    th {
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <center><h1>Email List</h1></center>
+  <table>
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for email in emails %}
+        <tr>
+          <td>{{ email.subject }}</td>
+          <td>{{ email.status }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td> No emails found.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
